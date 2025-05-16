@@ -25,8 +25,8 @@ go/mod/tidy:
 gorm/gen:
 	cd ./backend && \
 	go run ./cmd/gorm/main.go && \
-	git add ./internal/infrastructure/datasource/db/query && \
-	git add ./internal/infrastructure/datasource/db/entity
+	git add ./internal/calender/infrastructure/datasource/db/query && \
+	git add ./internal/calender/infrastructure/datasource/db/entity
 
 
 db/generate/%:
