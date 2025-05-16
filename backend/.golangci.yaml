@@ -1,7 +1,13 @@
 version: "2"
 
+linters:
+  exclusions:
+    generated: lax
+
 formatters:
   enable:
     - "gofmt"
     - "gofumpt"
     - "goimports"
+  exclusions:
+    generated: lax
