@@ -16,7 +16,7 @@ import (
 
 	"gorm.io/plugin/dbresolver"
 
-	"net.bright-room.dev/calender-api/internal/infrastructure/datasource/db/entity"
+	"net.bright-room.dev/calender-api/internal/calender/infrastructure/datasource/db/entity"
 )
 
 func newNationalHoliday(db *gorm.DB, opts ...gen.DOOption) nationalHoliday {

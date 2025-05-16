@@ -9,8 +9,8 @@ func main() {
 	cfg := _configuration.NewGormGenConfiguration()
 
 	g := gen.NewGenerator(gen.Config{
-		OutPath:       "internal/infrastructure/datasource/db/query",
-		ModelPkgPath:  "internal/infrastructure/datasource/db/entity",
+		OutPath:       "internal/calender/infrastructure/datasource/db/query",
+		ModelPkgPath:  "internal/calender/infrastructure/datasource/db/entity",
 		Mode:          gen.WithDefaultQuery,
 		FieldNullable: false,
 	})
