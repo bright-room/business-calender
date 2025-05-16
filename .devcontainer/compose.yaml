@@ -1,0 +1,31 @@
+services:
+  app:
+    build: 
+      context: "./app"
+    env_file:
+      - ".env"
+    command: [ "sleep", "infinity" ]
+    network_mode: "service:db"
+
+  db:
+    build:
+      context: "./db"
+    container_name: "${BUSINESS_DB_HOST}"
+    hostname: "${BUSINESS_DB_HOST}"
+    environment:
+      POSTGRES_DB: "${BUSINESS_DB_NAME}"
+      POSTGRES_USER: "${BUSINESS_DB_USER}"
+      POSTGRES_PASSWORD: "${BUSINESS_DB_PASSWORD}"
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8 --locale=C"
+      TZ: "${TZ}"
+    volumes:
+      - "postgres-data:/var/lib/postgresql/data"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready" ]
+      interval: "10s"
+      timeout: "5s"
+      retries: "3"
+    restart: "unless-stopped"
+
+volumes:
+  postgres-data:
