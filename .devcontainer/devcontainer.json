@@ -1,0 +1,32 @@
+{
+  "name": "Golang development containers",
+  "dockerComposeFile": "compose.yaml",
+  "service": "app",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "ghcr.io/guiyomh/features/golangci-lint:0": {},
+    "ghcr.io/guiyomh/features/gotestsum:0": {}
+  },
+
+  "containerEnv": {
+    "SSH_AUTH_SOCK": "/run/host-services/ssh-auth.sock"
+  },
+
+  "mounts": [
+    {
+      "source": "/run/host-services/ssh-auth.sock",
+      "target": "/run/host-services/ssh-auth.sock",
+      "type": "bind"
+    },
+  ],
+
+  "customizations" : {
+    "jetbrains" : {
+      "backend" : "GoLand"
+    }
+  },
+
+  "postAttachCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"
+}
