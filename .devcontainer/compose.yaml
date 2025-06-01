@@ -2,10 +2,10 @@ services:
   app:
     build: 
       context: "./app"
+    hostname: "app"
     env_file:
       - ".env"
     command: [ "sleep", "infinity" ]
-    network_mode: "service:db"
     restart: "unless-stopped"
 
   db:
