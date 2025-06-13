@@ -61,6 +61,7 @@ services:
       mc alias set $${MINIO_CREDENTIALS_ALIAS} $${MINIO_ENDPOINT} $${MINIO_ROOT_USER} $${MINIO_ROOT_PASSWORD};
       
       mc mb $${MINIO_CREDENTIALS_ALIAS}/$${MINIO_CRATE_BUCKET};
+      mc put ./storage/testdata/download_test.txt $${MINIO_CREDENTIALS_ALIAS}/$${MINIO_CRATE_BUCKET}/download_test.txt
       "
 
 volumes:
