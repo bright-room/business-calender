@@ -5,7 +5,7 @@ go 1.24.2
 require (
 	github.com/caarlos0/env/v10 v10.0.0
 	github.com/stretchr/testify v1.10.0
-	go.uber.org/dig v1.18.2
+	go.uber.org/dig v1.19.0
 	golang.org/x/text v0.25.0
 	golang.org/x/xerrors v0.0.0-20240903120638-7835f813f4da
 	gorm.io/driver/postgres v1.5.11
