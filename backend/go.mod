@@ -4,6 +4,7 @@ go 1.24.2
 
 require (
 	github.com/caarlos0/env/v10 v10.0.0
+	github.com/caarlos0/env/v11 v11.3.1
 	github.com/stretchr/testify v1.10.0
 	go.uber.org/dig v1.18.2
 	golang.org/x/text v0.25.0
