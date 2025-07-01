@@ -1,6 +1,6 @@
 FROM migrate/migrate:latest AS golang-migrate
 
-FROM golang:1.24.2 AS builder
+FROM golang:1.24.4 AS builder
 
 RUN go install golang.org/x/tools/cmd/godoc@latest
 
